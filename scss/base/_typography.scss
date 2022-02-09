@@ -1,0 +1,43 @@
+/**
+ * Basic typography style for copy text
+ */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+h1,
+.heading-1 {
+  @include heading1();
+}
+
+h2,
+.heading-2 {
+  @include heading2();
+}
+
+h3 {
+  @include heading3();
+}
+
+h4 {
+  @include heading4();
+}
+
+h5 {
+  @include heading5();
+}
+
+h6 {
+  @include heading6();
+}
+
+p {
+  margin: 0;
+  @include bodyText();
+}

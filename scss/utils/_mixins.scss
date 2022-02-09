@@ -1,0 +1,65 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass mixins.
+// -----------------------------------------------------------------------------
+
+@mixin mq($width, $type: min) {
+  @if map_has_key($breakpoints, $width) {
+    $width: map_get($breakpoints, $width);
+    @if ($type == min) {
+      $width: $width + 1px;
+    }
+    @media only screen and (#{$type}-width: $width) {
+      @content;
+    }
+  }
+}
+@mixin orientation($direction) {
+  $orientation-landscape: "(orientation:landscape)";
+  $orientation-portrait: "(orientation:portrait)";
+
+  @if $direction == landscape {
+    @media #{$orientation-landscape} {
+      @content;
+    }
+  }
+  @if $direction == portrait {
+    @media #{$orientation-portrait} {
+      @content;
+    }
+  }
+}
+
+// Typography mixins
+@mixin heading1() {
+}
+@mixin heading2() {
+}
+@mixin heading3() {
+}
+@mixin heading4() {
+}
+@mixin heading5() {
+}
+@mixin heading6() {
+}
+@mixin bodyText($size: 2) {
+}
+
+@mixin pseudo-elements() {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@mixin coverImage() {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@function vw($px-vw, $base-vw: 1600px) {
+  @return ($px-vw * 100vw) / $base-vw;
+}
