@@ -59,12 +59,15 @@ p {
 
 .header {
   position: fixed;
-  background: white;
+  background: #fff;
   top: 0;
   left: 0;
   width: 100%;
   padding: 12px 0;
   z-index: 10; }
+  @media only screen and (max-width: 767px) {
+    .header {
+      width: 100vw; } }
   .header .container {
     display: flex;
     align-items: center; }
@@ -73,11 +76,26 @@ p {
     .header-logo a {
       font-size: 24px;
       text-transform: uppercase; }
+  @media only screen and (max-width: 767px) {
+    .header-menu {
+      display: none; } }
   .header-menu__items {
     display: flex;
     align-items: center; }
-  .header-menu__item:not(:last-child) {
+  .header-menu__item {
+    position: relative;
     margin-right: 24px; }
+    .header-menu__item::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 0;
+      border-top: 1px solid #000;
+      transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1); }
+    .header-menu__item:hover::before {
+      width: 100%; }
 
 .text-primary {
   color: #1275db; }
@@ -200,11 +218,18 @@ p {
       top: 8px; }
     .hamburger span.bottom {
       bottom: 0; }
-  .hamburger:hover span.top, .hamburger.active span.top {
+  @media only screen and (min-width: 768px) {
+    .hamburger:hover span.top {
+      width: 25%; }
+    .hamburger:hover span.center {
+      width: 50%; }
+    .hamburger:hover span.bottom {
+      width: 75%; } }
+  .hamburger.active span.top {
     width: 25%; }
-  .hamburger:hover span.center, .hamburger.active span.center {
+  .hamburger.active span.center {
     width: 50%; }
-  .hamburger:hover span.bottom, .hamburger.active span.bottom {
+  .hamburger.active span.bottom {
     width: 75%; }
   .hamburger-menu {
     position: fixed;
@@ -219,15 +244,31 @@ p {
       right: 0; }
     .hamburger-menu__item {
       padding: 8px 16px;
-      border-top: 2px solid #000; }
+      border-top: 2px solid #000;
+      transition: all 0.7s cubic-bezier(0.165, 0.84, 0.44, 1); }
       .hamburger-menu__item:last-child {
         border-bottom: 2px solid #000; }
+      .hamburger-menu__item:hover {
+        background-color: rgba(0, 0, 0, 0.08); }
 
+@media only screen and (max-width: 767px) {
+  .main {
+    position: relative;
+    height: 100%; } }
+
+@media only screen and (max-width: 767px) {
+  .ms-home {
+    position: relative;
+    width: 100%;
+    height: 100%; } }
 .ms-home .ms-left {
   width: 40%; }
 .ms-home .ms-right .ms-section {
   padding: 40px;
   background-color: #1275db; }
+  @media only screen and (max-width: 767px) {
+    .ms-home .ms-right .ms-section {
+      padding: 20px; } }
 .ms-home .ms-right h1, .ms-home .ms-right h2 {
   color: #fff; }
 .ms-home .ms-bg__holder {

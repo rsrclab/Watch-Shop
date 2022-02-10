@@ -21,7 +21,22 @@
       bottom: 0;
     }
   }
-  &:hover, &.active {
+  &:hover {
+    @include mq('tablet', min) {
+      span {
+        &.top {
+          width: 25%;
+        }
+        &.center {
+          width: 50%;
+        }
+        &.bottom {
+          width: 75%;
+        }
+      }
+    }
+  }
+  &.active {
     span {
       &.top {
         width: 25%;
@@ -34,6 +49,7 @@
       }
     }
   }
+  
   &-menu {
     position: fixed;
     top: 52px;
@@ -42,17 +58,19 @@
     height: 100%;
     background-color: $white;;
     transition: all 0.7s cubic-bezier(0.165, 0.84, 0.44, 1);
-    z-index: 5;
+    z-index: $z-mobile-menu;
     &.open {
       right: 0;
-    }
-    &__items {
     }
     &__item {
       padding: 8px 16px;
       border-top: 2px solid $black;
+      transition: all 0.7s cubic-bezier(0.165, 0.84, 0.44, 1);
       &:last-child {
         border-bottom: 2px solid $black;
+      }
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.08);
       }
     }
   }
