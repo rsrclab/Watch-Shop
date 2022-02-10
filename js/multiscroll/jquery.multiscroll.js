@@ -1058,10 +1058,10 @@
                     if (options.responsiveWidth >= windowWidth) {
                         if (Math.abs(touchStartX - touchEndX) > ($(window).height() / 100 * options.touchSensitivity)) {
             
-                            if (touchStartX > touchEndX) {
+                            if ( (touchStartX > touchEndX && touchStartY < windowHeight /2) || (touchStartX < touchEndX && touchStartY > windowHeight /2)) {
                                 MS.moveSectionDown();
 
-                            } else if (touchEndX > touchStartX) {
+                            } else {
                                 MS.moveSectionUp();
                             }
                         } else {
