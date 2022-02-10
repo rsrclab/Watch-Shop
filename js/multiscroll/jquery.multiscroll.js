@@ -94,10 +94,18 @@
             options.css3 = support3d();
         }
   
-        $('html, body').css({
-            'overflow' : 'hidden',
-            'height' : '100%'
-        });
+        if (options.responsiveWidth >= windowWidth) {
+            $('html, body').css({
+                'overflow-y': 'scroll',
+                'overflow-x' : 'hidden',
+                'height' : 'auto'
+            }); 
+        } else {
+            $('html, body').css({
+                'overflow' : 'hidden',
+                'height' : '100%'
+            }); 
+        }
   
         //adding class names to each sections
         if (options.sectionSelector !== '.ms-section') {
@@ -400,6 +408,9 @@
          * When resizing is finished, we adjust the slides sizes and positions
          */
         function resizeHandler() {
+
+            addMouseWheelHandler();
+
             // rebuild immediately on touch devices
             if (isTouchDevice) {
                 var activeElement = $(document.activeElement);
@@ -431,6 +442,20 @@
          */
         function reBuild(resizing){
             windowWidth = $(window).width();
+            
+            if (options.responsiveWidth >= windowWidth) {
+                $('html, body').css({
+                    'overflow-y': 'scroll',
+                    'overflow-x' : 'hidden',
+                    'height' : 'auto'
+                }); 
+            } else {
+                $('html, body').css({
+                    'overflow' : 'hidden',
+                    'height' : '100%'
+                }); 
+            }
+
             if (options.responsiveWidth >= windowWidth) {
                 $('.ms-right, .ms-left').css({
                     'display': 'flex',
@@ -509,7 +534,6 @@
             //moving the right section to the bottom
             
             if (options.responsiveWidth >= windowWidth) {
-                console.log(options.css3);
                 if(options.css3){
                     transformContainer($('.ms-left'), 'translate3d(-' + $('.ms-left').find('.ms-section.active').position().left + 'px, 0px, 0px)', false);
                     transformContainer($('.ms-right'), 'translate3d(-' + ($('.ms-right').find('.ms-section.active').position().left - 2 * windowWidth) + 'px, 0px, 0px)', false);
@@ -730,7 +754,7 @@
             var curTime = new Date().getTime();
             
             // cross-browser wheel delta
-            e = e || window.event;
+            e = e || window.event;
             var value = e.wheelDelta || -e.deltaY || -e.detail;
             var delta = Math.max(-1, Math.min(1, value));
   
@@ -756,7 +780,7 @@
                 var averageMiddle = getAverage(scrollings, 70);
                 var isAccelerating = averageEnd >= averageMiddle;
   
-                if(isAccelerating && isScrollingVertically){
+                if(isAccelerating && isScrollingVertically && options.responsiveWidth < windowWidth){
                     //scrolling down?
                     if (delta < 0) {
                         MS.moveSectionDown();
@@ -1019,8 +1043,9 @@
   
             if(isReallyTouch(e)){
                 //preventing the easing on iOS devices
-                event.preventDefault();
-  
+                
+                e.preventDefault();
+
                 var activeSection = $('.ms-left .ms-section.active');
   
                 if (canScroll) { //if theres any #
@@ -1029,15 +1054,32 @@
                     touchEndX = touchEvents['x'];
   
                     //is the movement greater than the minimum resistance to scroll?
-                    if (Math.abs(touchStartY - touchEndY) > ($(window).height() / 100 * options.touchSensitivity)) {
-  
-                        if (touchStartY > touchEndY) {
-                            MS.moveSectionDown();
-  
-                        } else if (touchEndY > touchStartY) {
-                            MS.moveSectionUp();
+                    
+                    if (options.responsiveWidth >= windowWidth) {
+                        if (Math.abs(touchStartX - touchEndX) > ($(window).height() / 100 * options.touchSensitivity)) {
+            
+                            if (touchStartX > touchEndX) {
+                                MS.moveSectionDown();
+
+                            } else if (touchEndX > touchStartX) {
+                                MS.moveSectionUp();
+                            }
+                        } else {
+                            $('html, body').stop().animate( {
+                                'scrollTop': $(window).scrollTop() - touchEndY + touchStartY
+                            }, 300, 'swing');
                         }
-                    }
+                    } else {
+                        if (Math.abs(touchStartY - touchEndY) > ($(window).width() / 100 * options.touchSensitivity)) {
+            
+                            if (touchStartY > touchEndY) {
+                                MS.moveSectionDown();
+
+                            } else if (touchEndY > touchStartY) {
+                                MS.moveSectionUp();
+                            }
+                        }
+                    }                    
                 }
             }
         }

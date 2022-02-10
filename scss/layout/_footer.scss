@@ -3,3 +3,16 @@
 // -----------------------------------------------------------------------------
 
 // Footer styles
+.footer {
+  color: $white;
+  padding: 60px 0;
+  @include mq('tablet', min) {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 12px 0;
+    background: $black;
+    z-index: $z-mobile-menu;
+  }
+}
