@@ -26,6 +26,16 @@
     $('.hamburger').on('click', function () {
       $('.hamburger').toggleClass('active');
       $('.hamburger-menu').toggleClass('open');
+      $('.overlay').fadeToggle();
+    });
+
+    $('.footer-indicator').on('click', function () {
+      $('.footer').toggleClass('show');
+    });
+    $(document).on('click', function(e) {
+      if ( !$(e.target).closest('.footer').length ) {
+        $('.footer').removeClass('show');
+      }
     });
   });
 })(jQuery);

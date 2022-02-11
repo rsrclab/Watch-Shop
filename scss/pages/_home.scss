@@ -1,8 +1,9 @@
 // Style for homepage components goes here.
-.main {
+.main.ms-main {
   @include mq('tablet', max) {
     position: relative;
     height: 100vh;
+    padding-top: 54px;
   }
 }
 .ms-home {
@@ -12,32 +13,91 @@
     height: 100%;
   }
   .ms {
-    &-left {
-      width: 40%
-    }
-    &-right {
-      .ms-section {
-        padding: 40px;
-        background-color: $primary;
-        @include mq('tablet', max) {
-          padding: 20px;
-        }
-      }
-      h1, h2 {
-        color: $white;
-      }
-    }
     &-bg {
       &__holder {
         width: 100%;
         height: 100%;
         img {
-          width: 100%;
           height: 100%;
           object-fit: cover;
+          object-position: left center;
         }
       }
     }
-
+    &-img {
+      &__holder {
+        &.sm {
+          position: absolute;
+          font-size: 0;
+          bottom: 100px;
+          right: 300px;
+          @include mq('tablet', max) {
+            bottom: 70px;
+            right: 100px;
+          }
+          img {
+            max-height: 100px;
+          }
+        }
+        &.md {
+          margin-left: auto;
+          max-width: 50vw;
+          text-align: center;
+          @include mq('tablet', max) {
+            max-width: initial;
+          }
+          img {
+            max-height: 40vh;
+          }
+        }
+      }
+    }
+    &-content {
+      &__holder {
+        .btn {
+          position: absolute;
+          top: 50%;
+          left: calc(50vw - 270px);
+          transform: translateY(-50%);
+          @include mq('tablet', max) {
+            left: 20px;
+          }
+        }
+      }
+      &__desc {
+        position: absolute;
+        top: 120px;
+        max-width: 250px;
+        @include mq('tablet', max) {
+          top: 20px;
+          max-width: 200px;
+        }
+        a {
+          color: inherit;
+          font-style: italic;
+        }
+      }
+    }
+    &-left {
+      .ms-content__desc {
+        left: calc(50vw - 270px);
+        @include mq('tablet', max) {
+          left: initial;
+          right: 20px;
+        }
+      }
+    }
+    &-right {
+      .ms-content__desc {
+        right: 20px;
+      }
+      .ms-bg {
+        &__holder {
+          img {
+            object-position: right center;
+          }
+        }
+      }
+    }
   }
 }

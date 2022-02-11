@@ -15,7 +15,7 @@
   </head>
   <body>
     <header class="header">
-      <div class="container">
+      <div class="container-fluid">
         <div class="header-logo">
           <a href="#">MDM</a>
         </div>
@@ -61,43 +61,122 @@
         </div>
       </div>
     </header>
-    <main class="main">
+    <main class="main ms-main">
       <section class="ms-home" id="multiscroll">
         <div class="ms-left">
           <div class="ms-section">
             <div class="ms-bg__holder">
-              <img src="./images/image01.jpg" alt="">
-            </div>
-          </div>
-          <div class="ms-section">
-            <div class="ms-bg__holder">
               <img src="./images/image02.jpg" alt="">
             </div>
+            <div class="ms-content__holder">
+              <p class="ms-content__desc text-white">With this watch, you wear the legendary toughness of the "Dakar" on your wrist. <a href="#">Read more</a></p>
+              <a href="#" class="btn btn-black"><i class="fa-solid fa-angle-right"></i> The Story</a>
+            </div>
+          </div>
+          <div class="ms-section bg-white">
+            <div class="ms-img__holder md">
+              <img src="./images/watch02.png" alt="Watch">
+            </div>
+            <div class="ms-content__holder">
+              <p class="ms-content__desc">This text changed as well. It's a bit shorter now.<a href="#">Read more</a></p>
+              <a href="#" class="btn btn-black hover-black"><i class="fa-solid fa-angle-right"></i> The Watch</a>
+            </div>
           </div>
           <div class="ms-section">
             <div class="ms-bg__holder">
-              <img src="./images/image03.jpg" alt="">
+              <img src="./images/image01.jpg" alt="">
+            </div>
+            <div class="ms-content__holder">
+              <p class="ms-content__desc text-white">With this watch, you wear the legendary toughness of the "Dakar" on your wrist. <a href="#">Read more</a></p>
+              <a href="#" class="btn btn-black"><i class="fa-solid fa-angle-right"></i> The Story</a>
             </div>
           </div>
         </div>
         <div class="ms-right">
-          <div class="ms-section">
-            <h1>Content 1 goes here</h1>
+          <div class="ms-section bg-secondary">
+            <div class="ms-img__holder sm">
+              <img src="./images/watch-sm.png" alt="Watch">
+            </div>
+            <div class="ms-content__holder">
+              <p class="ms-content__desc text-black">With this watch, you wear the legendary toughness of the "Dakar" on your wrist. <a href="#">Read more</a></p>
+              <a href="#" class="btn btn-black"><i class="fa-solid fa-angle-right"></i> The Watch</a>
+            </div>
           </div>
           <div class="ms-section">
-            <h2>Content 2 goes here</h2>
+            <div class="ms-bg__holder">
+              <img src="./images/image03.webp" alt="">
+            </div>
+            <div class="ms-content__holder">
+              <p class="ms-content__desc text-white">With this watch, you wear the legendary toughness of the "Dakar" on your wrist. <a href="#">Read more</a></p>
+              <a href="#" class="btn btn-black"><i class="fa-solid fa-angle-right"></i> The Story</a>
+            </div>
           </div>
-          <div class="ms-section">
-            <h2>Content 3 goes here</h2>
+          <div class="ms-section bg-black">
+            <div class="ms-img__holder md">
+              <img src="./images/watch01.png" alt="Watch">
+            </div>
+            <div class="ms-content__holder">
+              <p class="ms-content__desc text-white"><span class="text-secondary">Special Edition "Nava" Racing</span><br>This text changed as well. It's a bit shorter now.<a href="#">Read more</a></p>
+              <a href="#" class="btn btn-secondary"><i class="fa-solid fa-angle-right"></i> The Watch</a>
+            </div>
           </div>
         </div>
       </section>
     </main>
     <footer class="footer">
-      <div class="container">
-        Footer goes here.
+      <div class="footer-indicator">
+        <p>Maurice De Maurica</p>
+        <p class="text-sm">Watches made by zurich</p>
+        <i class="fa-solid fa-chevron-up"></i>
+      </div>
+      <div class="footer-form">
+        <form action="">
+          <label for="email">Stay updated with our Newsletter</label>
+          <input type="email" name="email" id="email" placeholder="Email">
+        </form>
+      </div>
+      <div class="footer-contact">
+        <p>Contact us:</p>
+        <p class="phone"><a href="tel:410763734179">+41 (0) 76 373 41 79</a></p>
+        <p class="email"><a href="mailto:info@mauricedemauriac.ch">info@mauricedemauriac.ch</a></p>
+      </div>
+      <div class="footer-heading">
+        <p class="heading">Maurice de Mauriac</p>
+        <p>watches made my zurich</p>
+      </div>
+      <div class="footer-logo">
+        <a href="#"><img src="./images/logo-f.png" alt=""></a>
+      </div>
+      <div class="footer-info">
+        <p class="text-sm">Dreifuss Family Todistrasse 48 8002 Zurich</p>
+        <p class="text-sm"><a href="https://mauricedemauriac.ch">Mauricedemauriac.ch</a> <a href="mailto:info@mauricedemauriac.ch">info@mauricedemauriac.ch</a></p>
+        <p class="text-sm">Phone: <a href="tel:410442800112">+41 (0)44 280 01 12</a> Mobile: <a href="tel:410763734179">+41 (0)76 373 41 79</a></p>
+      </div>
+      <div class="footer-menu">
+        <div class="footer-social">
+          <ul class="footer-social__items">
+            <li class="footer-social__item"><a href="#">IG</a></li>
+            <li class="footer-social__item"><a href="#">FB</a></li>
+            <li class="footer-social__item"><a href="#">T</a></li>
+          </ul>
+        </div>
+        <div class="footer-menu__holder">
+          <ul class="footer-menu__items">
+            <li class="footer-menu__item"><a href="#">Kontakt</a></li>
+            <li class="footer-menu__item"><a href="#">Versand</a></li>
+            <li class="footer-menu__item"><a href="#">Newsletter</a></li>
+            <li class="footer-menu__item"><a href="#">AGB's'</a></li>
+            <li class="footer-menu__item"><a href="#">Datenschutz</a></li>
+            <li class="footer-menu__item"><a href="#">Impressum</a></li>
+            <li class="footer-menu__item footer-copyright">
+              &copy; 2021 Maurice de Mauriac
+            </li>
+          </ul>
+        </div>
       </div>
     </footer>
+    <div class="overlay"></div>
+    <script src="https://kit.fontawesome.com/d8be5fb974.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="./js/jquery.easings.min.js"></script>
     <script src="./js/multiscroll/jquery.multiscroll.js"></script>

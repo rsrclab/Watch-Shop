@@ -6,9 +6,9 @@ body {
   margin: 0;
   padding: 0;
   width: 100%;
-  background-color: $black;
-  color: $text_color;
   overflow-x: hidden;
+  color: $text_color;
+  background-color: $black;
   @include bodyText();
 }
 
@@ -51,4 +51,8 @@ ul {
   margin: 0;
   padding-left: 0;
   list-style: none;
+}
+
+input, button, textarea {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }

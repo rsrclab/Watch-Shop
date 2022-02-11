@@ -977,7 +977,7 @@
         function getTableHeight(section){
             var sectionHeight = windowHeight;
             if (options.responsiveWidth >= windowWidth) {
-                var sectionHeight = windowHeight / 2 - 40;
+                var sectionHeight = windowHeight / 2 - 27;
             }
             if(options.paddingTop || options.paddingBottom){
                 var paddings = parseInt(section.css('padding-top')) + parseInt(section.css('padding-bottom'));

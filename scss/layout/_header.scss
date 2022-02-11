@@ -10,13 +10,20 @@
   left: 0;
   width: 100%;
   padding: 12px 0;
+  border-bottom: 2px solid $black;
   z-index: $z-header;
   @include mq('tablet', max) {
     width: 100vw;
+    padding: 0;
   }
-  .container {
+  .container-fluid {
     display: flex;
     align-items: center;
+    @include mq('tablet', max) {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      background-color: $white;
+    }
   }
   &-logo {
     width: 50%;

@@ -8,12 +8,24 @@
 .text-secondary {
   color: $secondary;
 }
+.text-white {
+  color: $white;
+}
+.text-black {
+  color: $black;
+}
 
 .bg-primary {
   background-color: $primary;
 }
 .bg-secondary {
   background-color: $secondary;
+}
+.bg-white {
+  background-color: $white;
+}
+.bg-black {
+  background-color: $black;
 }
 
 // Custom Container
@@ -91,6 +103,7 @@
     display: block;
   }
 }
+
 .cursor-follower {
   display: none;
   position: fixed;
@@ -129,5 +142,54 @@
   }
   @include mq("tablet") {
     display: block;
+  }
+}
+
+.btn {
+  display: inline-block;
+  padding: 8px 20px 8px 12px;
+  font-size: 18px;
+  text-transform: uppercase;
+  transition: all 0.3s ease-in-out;
+  i {
+    margin-right: 6px;
+  }
+  &-black {
+    color: $white;
+    border: 1px solid transparent;
+    background-color: $black;
+    &:hover {
+      border: 1px solid $white;
+      background-color: transparent;
+    }
+    &.hover-black {
+      &:hover {
+        border: 1px solid $black;
+        color: $black;
+        background-color: transparent;
+      }
+    }
+  }
+  &-secondary {
+    color: $white;
+    border: 1px solid transparent;
+    background-color: $secondary;
+    &:hover {
+      border: 1px solid $white;
+      background-color: transparent;
+    }
+  }
+}
+.overlay {
+  position: fixed;
+  display: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $black;
+  z-index: $z-mobile-menu;
+  @include mq('tablet', min) {
+    display: none !important;
   }
 }
