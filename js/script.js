@@ -93,5 +93,13 @@
       }, 500);
     }
 
+    if ( $('[data-fancybox="gallery"]').length ) {
+      $('[data-fancybox="gallery"]').fancybox({
+        buttons: [
+          "close"
+        ],
+      });
+    }
+
   });
 })(jQuery);

@@ -202,3 +202,19 @@
     text-align: center;
   }
 }
+.g-map {
+  margin: 48px 0;
+  font-size: 0;
+  iframe {
+    width: 100%;
+  }
+}
+.fancybox-bg {
+  background-color: $black;
+}
+.fancybox-is-open .fancybox-bg {
+  opacity: 1;
+}
+.fancybox-button--zoom {
+  display: none !important;
+}
