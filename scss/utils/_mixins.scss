@@ -31,10 +31,25 @@
 
 // Typography mixins
 @mixin heading1() {
+  font-size: 120px;
+  @include mq('tablet-wide', max) {
+    font-size: 80px;
+  }
+  @include mq('tablet', max) {
+    font-size: 64px;
+  }
 }
 @mixin heading2() {
+  font-size: 36px;
+  @include mq('tablet', max) {
+    font-size: 20px
+  }
 }
 @mixin heading3() {
+  font-size: 30px;
+  @include mq('tablet', max) {
+    font-size: 18px;
+  }
 }
 @mixin heading4() {
 }

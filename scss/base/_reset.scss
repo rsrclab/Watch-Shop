@@ -6,9 +6,8 @@ body {
   margin: 0;
   padding: 0;
   width: 100%;
-  overflow-x: hidden;
   color: $text_color;
-  background-color: $black;
+  background-color: $white;
   @include bodyText();
 }
 
@@ -20,7 +19,9 @@ body {
 *:focus {
   outline: none;
 }
-
+*::-webkit-scrollbar {
+  display: none;
+}
 a,
 button,
 .btn {
@@ -39,7 +40,6 @@ img {
 
 main {
   max-width: 100%;
-  overflow-x: hidden;
 }
 
 hr {

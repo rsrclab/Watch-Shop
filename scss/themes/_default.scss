@@ -52,6 +52,11 @@
     display: none;
   }
 }
+.h-sm-only {
+  @include mq("tablet", max) {
+    display: none;
+  }
+}
 
 // Loading Screen
 .loader {
@@ -151,6 +156,9 @@
   font-size: 18px;
   text-transform: uppercase;
   transition: all 0.3s ease-in-out;
+  @include mq('tablet', max) {
+    font-size: 14px;
+  }
   i {
     margin-right: 6px;
   }
@@ -169,6 +177,22 @@
         background-color: transparent;
       }
     }
+    &.hover-black-filled {
+      &:hover {
+        border: 1px solid $black;
+        color: $black;
+        background-color: $white;
+      }
+    }
+  }
+  &-white {
+    color: $black;
+    border: 1px solid $black;
+    background-color: $white;
+    &:hover {
+      color: $white;
+      background-color: $black;
+    }
   }
   &-secondary {
     color: $white;
@@ -177,6 +201,15 @@
     &:hover {
       border: 1px solid $white;
       background-color: transparent;
+    }
+  }
+  &-grey {
+    color: $white;
+    border: 1px solid $dark_grey;
+    background-color: $dark_grey;
+    &:hover {
+      border: 1px solid $black;
+      background-color: $black;
     }
   }
 }

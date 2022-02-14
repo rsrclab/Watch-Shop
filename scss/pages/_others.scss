@@ -1,0 +1,58 @@
+.f-intro {
+  display: flex;
+  flex-wrap: wrap;
+  &__imgs {
+    padding: 0 16px;
+    width: calc(100% / 3 * 2);
+    @include mq('tablet', max) {
+      width: 100%;
+      padding: 0;
+      margin: 0 0 24px;
+    }
+    .slick-list {
+      padding: 0 !important;
+    }
+    .slick-next {
+      right: 25px;
+    }
+    .slick-prev {
+      left: 25px;
+      z-index: 1;
+    }
+  }
+  &__texts {
+    padding: 0 16px;
+    width: calc(100% / 3);
+    @include mq('tablet', max) {
+      width: 100%;
+    }
+    p {
+      &:not(:last-child) {
+        margin-bottom: 16px;
+      }
+    }
+  }
+  &__img {
+    &:not(:last-child) {
+      margin-bottom: 24px;
+      @include mq('tablet', max) {
+        margin: 0;
+      }
+    }
+    img {
+      display: block;
+      margin: 0 0 8px;
+      @include mq('tablet', max) {
+        max-width: 100vw;
+      }
+    }
+    p {
+      display: block;
+      font-size: 12px;
+      max-width: 640px;
+      @include mq('tablet', max) {
+        display: none;
+      }
+    }
+  }
+}

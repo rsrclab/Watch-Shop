@@ -1,0 +1,204 @@
+.full-image {
+  width: 100%;
+  font-size: 0;
+  margin: 24px 0;
+  &.no-mt {
+    margin-top: 0;
+  }
+  img {
+    width: 100%;
+  }
+}
+.w-slider {
+  margin: 48px 0;
+  border-top: 1px solid $black;
+  &__item {
+    &:not(:last-child) {
+      border-right: 1px solid $black;
+    }
+    .img-holder {
+      position: relative;
+      padding-top: 100%;
+      background-color: $grey;
+      margin-bottom: 12px;
+      .inner-wrap {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        img {
+          max-width: 90%;
+          max-height: 90%;
+        }
+      }
+    }
+    p {
+      &.name {
+        text-transform: uppercase;
+      }
+      padding: 0 12px;
+    }
+  }
+  .slick-next {
+    right: 25px;
+  }
+  .slick-prev {
+    left: 25px;
+    z-index: 1;
+  }
+}
+.back-to-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 48px 0 12px;
+  text-align: center;
+  a {
+    i {
+      font-size: 24px;
+      display: block;
+    }
+  }
+}
+.family {
+  .family-inner {
+    display: flex;
+    background-color: $black;
+  }
+  &-testimonial {
+    width: 50%;
+    padding: 24px 16px;
+    color: $white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &__ratio {
+      width: 100%;
+      margin: 0 0 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .icon-holder {
+        font-size: 0;
+        margin-right: 16px;
+        img {
+          height: 36px;
+          filter: invert(1);          
+          @include mq('tablet-wide', max) {
+            height: 16px;
+          }
+        }
+      }
+      .ratio-holder {
+        display: flex;
+        align-items: center;
+        span {
+          width: 24px;
+          height: 24px;
+          border-radius: 50%;
+          border: 2px solid $white;
+          @include mq('tablet-wide', max) {
+            width: 20px;
+            height: 20px;
+          }
+          @include mq('tablet', max) {
+            width: 10px;
+            height: 10px;
+          }
+          &.active {
+            background-color: $white;
+          }
+          &:not(:last-child) {
+            margin-right: 8px;
+            @include mq('tablet-wide', max) {
+              margin-right: 5px;
+            }
+          }
+        }
+      }
+    }
+    &__content {
+      max-width: 640px;
+      margin: 0 auto;
+      font-size: 24px;
+      text-align: center;
+      @include mq('tablet-wide', max) {
+        font-size: 20px;
+      }
+      @include mq('tablet-wide', max) {
+        font-size: 14px;
+      }
+    }
+  }
+  &-image {
+    position: relative;
+    width: 50%;
+    font-size: 0;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+    a {
+      position: absolute;
+      top: 50%;
+      right: 20%;
+    }
+  }
+  &-menu {
+    display: none;
+    @include mq('tablet', max) {
+      display: block;
+      margin: 0 0 12px;
+      padding: 0 12px;
+    }
+    &__items {
+      display: flex;
+      align-items: center;
+    }
+    &__item {
+      &:not(:last-child) {
+        margin-right: 20px;
+      }
+      a {
+        font-weight: bold;
+        color: $black;
+      }
+    }
+  }
+}
+.page-heading {
+  margin: 24px 0 36px;
+  padding-top: 70px;
+  text-align: center;
+  @include mq('tablet', max) {
+    padding-top: 30px;
+  }
+  .subheading {
+    margin-bottom: 0;
+  }
+  h1 {
+    margin: 12px 0 0;
+    text-transform: uppercase;
+  }
+}
+.view-all {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 64px auto;
+  width: 50%;
+  @include mq('tablet-wide', max) {
+    width: 100%;
+    padding: 0 24px;
+  }
+  .btn {
+    width: 50%;
+    text-align: center;
+  }
+}

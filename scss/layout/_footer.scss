@@ -4,7 +4,6 @@
 
 // Footer styles
 .footer {
-  position: fixed;
   display: flex;
   flex-wrap: wrap;
   left: 0;
@@ -14,15 +13,18 @@
   background: $black;
   transition: all 0.3s ease-in-out;
   z-index: $z-mobile-menu;
-  @include mq('tablet', min) {
-    transform: translateY(100%);
-    &.show {
-      transform: translateY(0);
-    }
-  }
   @include mq('tablet', max) {
     position: relative;
     align-items: center;
+  }
+  &-home {
+    @include mq('tablet', min) {
+      position: fixed;
+      transform: translateY(100%);
+      &.show {
+        transform: translateY(0);
+      }
+    }
   }
   &-indicator {
     cursor: pointer;
@@ -144,6 +146,7 @@
     @include mq('tablet', max) {
       padding: 16px 12px 16px 0;
       width: auto;
+      max-width: calc(100% - 60px);
       margin-right: auto;
     }
     a {
